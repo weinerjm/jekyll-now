@@ -1,15 +1,12 @@
 ---
 layout: post
-title:  "The Most Extreme Metal Lyrics"
+title:  "Analysis of Heavy Metal Lyrics"
 date:   2016-05-22 13:01:00 -0700
 categories: metal,data
 ---
-
-Analyzing Metal Lyrics: Which Band is Most Brutal?
-====
 For a little while now, I have been wanting to apply fancy data analysis methods to heavy metal lyrics. Most metal lyrics have a very specific focus on some topic not usually considered in songs you might hear on the radio (_e.g.,_ fantasy, rebellion, violence, or blasphemy).
 
--> ![alt text](../images/metal/metal-wc.png "Metal Lyrics Word Cloud") <-
+![alt text](../images/metal/metal-wc.png "Metal Lyrics Word Cloud")
 
 Websites like [DarkLyrics](http://www.darklyrics.com) and [The Metal Archives: Encyclopaedia Metallum](http://www.metal-archives.com) have lyrics from thousands of artists and even more thousands of albums. "Extreme" subgenres (like Death or Black metal) have existed for 30 years, meaning there have been tons and tons of bands writing really crazy (awesome) stuff.
 
