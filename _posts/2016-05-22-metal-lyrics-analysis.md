@@ -6,13 +6,17 @@ categories: metal,data
 ---
 For a little while now, I have been wanting to apply fancy data analysis methods to heavy metal lyrics. Most metal lyrics have a very specific focus on some topic not usually considered in songs you might hear on the radio (_e.g.,_ fantasy, rebellion, violence, or blasphemy).
 
-![alt text](../images/metal/metal-wc.png "Metal Lyrics Word Cloud")
+![alt text]({{ site.baseurl }}/images/metal/metal-wc.png "Metal Lyrics Word Cloud")
 
 Websites like [DarkLyrics](http://www.darklyrics.com) and [The Metal Archives: Encyclopaedia Metallum](http://www.metal-archives.com) have lyrics from thousands of artists and even more thousands of albums. "Extreme" subgenres (like Death or Black metal) have existed for 30 years, meaning there have been tons and tons of bands writing really crazy (awesome) stuff.
 
 Well, the wait is over! Over the past few days, I put together a simple web scraper and downloaded millions of words' worth of lyrics from thousands of bands. The final count for this post includes 17.2 million words from 7,000 bands and 23,000 albums. It's not as comprehensive as Metal Archives' list but it's pretty good for a start.
 
 And now we can generate rankings for the categories of lyrical content that really matter: **Judas Priest, Highlander, Spooky, Violence, and Blasphemy**. I'll explain a little more about the categories below.
+
+Special Thanks
+----
+Thanks to Matt O. for his encouragement and creativity. He defined the categories and had lots of great ideas (as he always does)!
 
 Scoring
 ----
@@ -85,15 +89,15 @@ Top 10 **Highlander** bands:
 Top 10 **Highlander** albums:
 
 
-1. _Own The Crown_ by Majesty
-2. _Blade Of Triumph_ by Iron Fire
-3. _King Of Kings_ by Leaves' Eyes
-4. _Kings Of The Nordic Twilight_ by Luca Turilli
-5. _Bound By Metal_ by Wizard
-6. _Dawn Of Victory_ by Rhapsody
-7. _The Alliance Of The Kings_ by Ancient Bards
+1. _Own the Crown_ by Majesty
+2. _Blade of Triumph_ by Iron Fire
+3. _King of Kings_ by Leaves' Eyes
+4. _Kings of The Nordic Twilight_ by Luca Turilli
+5. _Bound by Metal_ by Wizard
+6. _Dawn of Victory_ by Rhapsody
+7. _The Alliance of the Kings_ by Ancient Bards
 8. _Heavy Metal Thunder_ by Saxon
-9. _Starfire Burning Upon The Ice-Veiled Throne Of Ultima Thule_ by Bal-Sagoth
+9. _Starfire Burning Upon the Ice-Veiled Throne of Ultima Thule_ by Bal-Sagoth
 10. _Battle Magic_ by Bal-Sagoth
 
 Spooky
@@ -149,12 +153,12 @@ Top 10 **Blasphemy** bands:
 Top 10 **Blasphemy** albums:
 
 
-1. _Celebration For The Love of Satan_ by Satan's Host
+1. _Celebration for the Love of Satan_ by Satan's Host
 2. _Hell Destroyer_ by Cage
-3. _Eve Of Desecration_ by Ezurate
-4. _Bleeding The False_ by Aeon (Sweden)
-5. _Symphony Of War_ by Magic Kingdom
-6. _The Final Sign Of Evil_ by Sodom
+3. _Eve of Desecration_ by Ezurate
+4. _Bleeding the False_ by Aeon (Sweden)
+5. _Symphony of War_ by Magic Kingdom
+6. _The Final Sign of Evil_ by Sodom
 7. _Gloria Diaboli_ by Blackmass
 8. _Satanic Armageddon_ by Horncrowned
 9. _The Nocturnal Silence_ by Necrophobic
@@ -190,7 +194,7 @@ Top 10 **Violence** albums:
 7. _Hell on Wheels Live_ by Manowar
 8. _Eternal Death_ by Crown of Thorns
 9. _God Hates Us All_ by Slayer
-10. _Own The Crown_ by Majesty
+10. _Own the Crown_ by Majesty
 
 **Comments:** I had to exclude the word "die" because of all the German-language lyrics. This was also a problem for "war."
 
