@@ -7,6 +7,7 @@ I also spent some time learning some basic things about Recurrent Neural Network
 Previously, I had used simpler methods for generating random text.
 
 But since "Deep Learning" sounds cool (and is cool), I decided to use this sophisticated method to generate random Pokemon names!
+There are already some web projects that create [Pokemon mashups](http://pokemon.alexonsager.net/) and can generate [random teams of Pokemon](http://randompokemon.com/) or [random Pokemon names](http://fantasynamegenerators.com/pokemon-names.php). But I didn't see anything that did precisely what I wanted--the closest was [Andrej Karpathy's baby names](http://karpathy.github.io/2015/05/21/rnn-effectiveness/).
 
 I set up [Justin Johnson](http://cs.stanford.edu/people/jcjohns/)'s [torch-rnn](https://github.com/jcjohnson/torch-rnn) project (based on [Andrej Karpathy](http://twitter.com/karpathy)'s [char-rnn](https://github.com/karpathy/char-rnn)) following [Jeff Thompson's instructions](http://www.jeffreythompson.org/blog/2016/03/25/torch-rnn-mac-install/). 
 I then got a list of [all the Pokemon names]({{ site.url }}/assets/pokemon.txt) from all generations from [Bulbapedia](http://bulbapedia.bulbagarden.net/wiki/List_of_Pok%C3%A9mon_by_name). I had to write a simple script to parse out the names from the article's source before feeding it into the preprocessor.
@@ -25,5 +26,7 @@ Some of my favorites:
 > Seeflip
 
 Actually, I can't tell if some of these are real names! I'm not familiar with many Pokemon after Generation I.
+
+I would like to put this up as a web app somewhere but I don't know where I could install torch easily on a free-tier server.
 
 Up next: downloading images from Bulbapedia and trying to use some neural networks to generate random Pokemon art!
