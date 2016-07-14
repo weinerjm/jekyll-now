@@ -2,6 +2,9 @@
 layout: post
 title: Recurrent Neural Network for Generating Random Pokemon Names
 ---
+
+**Update:** You can see a web app in action [here](http://pokegen.crabdance.com).
+
 Like the rest of America, I've spent a lot of time the past several days playing Pokemon Go.
 I also spent some time learning some basic things about Recurrent Neural Networks (RNNs) for generating random text. 
 Previously, I had used simpler methods for generating random text.
