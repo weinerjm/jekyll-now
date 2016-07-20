@@ -23,10 +23,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[      1064,         20]
-NotebookDataLength[     34158,        886]
-NotebookOptionsPosition[     33229,        830]
-NotebookOutlinePosition[     33777,        853]
-CellTagsIndexPosition[     33734,        850]
+NotebookDataLength[     44464,       1167]
+NotebookOptionsPosition[     43531,       1111]
+NotebookOutlinePosition[     44079,       1134]
+CellTagsIndexPosition[     44036,       1131]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -465,7 +465,76 @@ Cell[BoxData[
     RowBox[{
      RowBox[{"{", 
       RowBox[{"tnn", ",", "0.75", ",", " ", "\"\<True Negative Rate\>\""}], 
-      "}"}], ",", "0", ",", "1"}], "}"}]}], "]"}]], "Input", \
+      "}"}], ",", "0", ",", "1"}], "}"}], ",", "\[IndentingNewLine]", 
+   RowBox[{"Initialization", "\[RuleDelayed]", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"mut", "=", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"p", "*", "tp"}], ",", 
+           RowBox[{"p", "*", 
+            RowBox[{"(", 
+             RowBox[{"1", "-", "tp"}], ")"}]}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"1", "-", "p"}], ")"}], "*", 
+            RowBox[{"(", 
+             RowBox[{"1", "-", "tn"}], ")"}]}], ",", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"1", "-", "p"}], ")"}], "*", "tn"}]}], "}"}]}], "}"}]}], 
+      ";", 
+      RowBox[{
+       RowBox[{"entropy", "[", "p_", "]"}], ":=", 
+       RowBox[{
+        RowBox[{"-", "p"}], "*", 
+        RowBox[{"Log", "[", 
+         RowBox[{"2", ",", "p"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"info", "[", "m_", "]"}], ":=", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"entropy", "[", 
+           RowBox[{"Total", "[", 
+            RowBox[{"m", "[", 
+             RowBox[{"[", "1", "]"}], "]"}], "]"}], "]"}], "+", 
+          RowBox[{"entropy", "[", 
+           RowBox[{"Total", "[", 
+            RowBox[{"m", "[", 
+             RowBox[{"[", "2", "]"}], "]"}], "]"}], "]"}]}], ")"}], "+", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"entropy", "[", 
+           RowBox[{"Total", "[", " ", 
+            RowBox[{"m", "[", 
+             RowBox[{"[", 
+              RowBox[{"All", ",", "1"}], "]"}], "]"}], "]"}], " ", "]"}], "+", 
+          RowBox[{"entropy", "[", " ", 
+           RowBox[{"Total", "[", 
+            RowBox[{"m", "[", 
+             RowBox[{"[", 
+              RowBox[{"All", ",", "2"}], "]"}], "]"}], "]"}], " ", "]"}]}], 
+         ")"}], "-", 
+        RowBox[{"Total", "[", 
+         RowBox[{"Flatten", "[", 
+          RowBox[{"Table", "[", 
+           RowBox[{
+            RowBox[{"entropy", "[", 
+             RowBox[{"m", "[", 
+              RowBox[{"[", 
+               RowBox[{"i", ",", "j"}], "]"}], "]"}], "]"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"{", 
+             RowBox[{"i", ",", "1", ",", "2"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"j", ",", "1", ",", "2"}], "}"}]}], "]"}], "]"}], 
+         "]"}]}]}], ";"}], ")"}]}]}], "]"}]], "Input", \
 "PluginEmbeddedContent"],
 
 Cell[BoxData[
@@ -479,13 +548,13 @@ Cell[BoxData[
        Hold[$CellContext`tnn$$], 0.75, "True Negative Rate"}, 0, 1}}, 
     Typeset`size$$ = {576., {218.134033203125, 223.865966796875}}, 
     Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
-    True, $CellContext`tpn$93192$$ = 0, $CellContext`tnn$93193$$ = 0}, 
+    False, $CellContext`tpn$98540$$ = 0, $CellContext`tnn$98541$$ = 0}, 
     DynamicBox[Manipulate`ManipulateBoxes[
      1, StandardForm, 
       "Variables" :> {$CellContext`tnn$$ = 0.75, $CellContext`tpn$$ = 0.5}, 
       "ControllerVariables" :> {
-        Hold[$CellContext`tpn$$, $CellContext`tpn$93192$$, 0], 
-        Hold[$CellContext`tnn$$, $CellContext`tnn$93193$$, 0]}, 
+        Hold[$CellContext`tpn$$, $CellContext`tpn$98540$$, 0], 
+        Hold[$CellContext`tnn$$, $CellContext`tnn$98541$$, 0]}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
@@ -518,6 +587,30 @@ $CellContext`tnn$$}], {$CellContext`pn, 0, 1}, Frame -> True,
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
+    Initialization:>(($CellContext`mut = {{$CellContext`p $CellContext`tp, \
+$CellContext`p (1 - $CellContext`tp)}, {(1 - $CellContext`p) (
+           1 - $CellContext`tn), (
+           1 - $CellContext`p) $CellContext`tn}}; $CellContext`entropy[
+         Pattern[$CellContext`p, 
+          Blank[]]] := (-$CellContext`p) 
+        Log[2, $CellContext`p]; $CellContext`info[
+         Pattern[$CellContext`m, 
+          Blank[]]] := ($CellContext`entropy[
+           Total[
+            Part[$CellContext`m, 1]]] + $CellContext`entropy[
+           Total[
+            Part[$CellContext`m, 2]]]) + ($CellContext`entropy[
+           Total[
+            Part[$CellContext`m, All, 1]]] + $CellContext`entropy[
+           Total[
+            Part[$CellContext`m, All, 2]]]) - Total[
+         Flatten[
+          Table[
+           $CellContext`entropy[
+            
+            Part[$CellContext`m, $CellContext`i, $CellContext`j]], \
+{$CellContext`i, 1, 2}, {$CellContext`j, 1, 2}]]]; Null); 
+     Typeset`initDone$$ = True),
     SynchronousInitialization->True,
     UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
     UnsavedVariables:>{Typeset`initDone$$},
@@ -615,7 +708,77 @@ Cell[BoxData[
     RowBox[{
      RowBox[{"{", 
       RowBox[{"tnn", ",", "0.75", ",", "\"\<True Negative Rate\>\""}], "}"}], 
-     ",", "0", ",", "1"}], "}"}]}], "]"}]], "Input", "PluginEmbeddedContent"],
+     ",", "0", ",", "1"}], "}"}], ",", 
+   RowBox[{"Initialization", "\[RuleDelayed]", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"mut", "=", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"p", "*", "tp"}], ",", 
+           RowBox[{"p", "*", 
+            RowBox[{"(", 
+             RowBox[{"1", "-", "tp"}], ")"}]}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"1", "-", "p"}], ")"}], "*", 
+            RowBox[{"(", 
+             RowBox[{"1", "-", "tn"}], ")"}]}], ",", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"1", "-", "p"}], ")"}], "*", "tn"}]}], "}"}]}], "}"}]}], 
+      ";", 
+      RowBox[{
+       RowBox[{"entropy", "[", "p_", "]"}], ":=", 
+       RowBox[{
+        RowBox[{"-", "p"}], "*", 
+        RowBox[{"Log", "[", 
+         RowBox[{"2", ",", "p"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"info", "[", "m_", "]"}], ":=", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"entropy", "[", 
+           RowBox[{"Total", "[", 
+            RowBox[{"m", "[", 
+             RowBox[{"[", "1", "]"}], "]"}], "]"}], "]"}], "+", 
+          RowBox[{"entropy", "[", 
+           RowBox[{"Total", "[", 
+            RowBox[{"m", "[", 
+             RowBox[{"[", "2", "]"}], "]"}], "]"}], "]"}]}], ")"}], "+", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"entropy", "[", 
+           RowBox[{"Total", "[", " ", 
+            RowBox[{"m", "[", 
+             RowBox[{"[", 
+              RowBox[{"All", ",", "1"}], "]"}], "]"}], "]"}], " ", "]"}], "+", 
+          RowBox[{"entropy", "[", " ", 
+           RowBox[{"Total", "[", 
+            RowBox[{"m", "[", 
+             RowBox[{"[", 
+              RowBox[{"All", ",", "2"}], "]"}], "]"}], "]"}], " ", "]"}]}], 
+         ")"}], "-", 
+        RowBox[{"Total", "[", 
+         RowBox[{"Flatten", "[", 
+          RowBox[{"Table", "[", 
+           RowBox[{
+            RowBox[{"entropy", "[", 
+             RowBox[{"m", "[", 
+              RowBox[{"[", 
+               RowBox[{"i", ",", "j"}], "]"}], "]"}], "]"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"{", 
+             RowBox[{"i", ",", "1", ",", "2"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"j", ",", "1", ",", "2"}], "}"}]}], "]"}], "]"}], 
+         "]"}]}]}], ";"}], ")"}]}]}], "]"}]], "Input", \
+"PluginEmbeddedContent"],
 
 Cell[BoxData[
  TagBox[
@@ -627,11 +790,11 @@ Cell[BoxData[
        Hold[$CellContext`tnn$$], 0.75, "True Negative Rate"}, 0, 1}}, 
     Typeset`size$$ = {576., {218.134033203125, 223.865966796875}}, 
     Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
-    True, $CellContext`tnn$97988$$ = 0}, 
+    False, $CellContext`tnn$98898$$ = 0}, 
     DynamicBox[Manipulate`ManipulateBoxes[
      1, StandardForm, "Variables" :> {$CellContext`tnn$$ = 0.75}, 
       "ControllerVariables" :> {
-        Hold[$CellContext`tnn$$, $CellContext`tnn$97988$$, 0]}, 
+        Hold[$CellContext`tnn$$, $CellContext`tnn$98898$$, 0]}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
@@ -667,6 +830,30 @@ $CellContext`tpn, $CellContext`p ->
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
+    Initialization:>(($CellContext`mut = {{$CellContext`p $CellContext`tp, \
+$CellContext`p (1 - $CellContext`tp)}, {(1 - $CellContext`p) (
+           1 - $CellContext`tn), (
+           1 - $CellContext`p) $CellContext`tn}}; $CellContext`entropy[
+         Pattern[$CellContext`p, 
+          Blank[]]] := (-$CellContext`p) 
+        Log[2, $CellContext`p]; $CellContext`info[
+         Pattern[$CellContext`m, 
+          Blank[]]] := ($CellContext`entropy[
+           Total[
+            Part[$CellContext`m, 1]]] + $CellContext`entropy[
+           Total[
+            Part[$CellContext`m, 2]]]) + ($CellContext`entropy[
+           Total[
+            Part[$CellContext`m, All, 1]]] + $CellContext`entropy[
+           Total[
+            Part[$CellContext`m, All, 2]]]) - Total[
+         Flatten[
+          Table[
+           $CellContext`entropy[
+            
+            Part[$CellContext`m, $CellContext`i, $CellContext`j]], \
+{$CellContext`i, 1, 2}, {$CellContext`j, 1, 2}]]]; Null); 
+     Typeset`initDone$$ = True),
     SynchronousInitialization->True,
     UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
     UnsavedVariables:>{Typeset`initDone$$},
@@ -765,7 +952,77 @@ Cell[BoxData[
     RowBox[{
      RowBox[{"{", 
       RowBox[{"tpn", ",", "0.5", ",", "\"\<True Positive Rate\>\""}], "}"}], 
-     ",", "0", ",", "1"}], "}"}]}], "]"}]], "Input", "PluginEmbeddedContent"],
+     ",", "0", ",", "1"}], "}"}], ",", 
+   RowBox[{"Initialization", "\[RuleDelayed]", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"mut", "=", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"p", "*", "tp"}], ",", 
+           RowBox[{"p", "*", 
+            RowBox[{"(", 
+             RowBox[{"1", "-", "tp"}], ")"}]}]}], "}"}], ",", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"1", "-", "p"}], ")"}], "*", 
+            RowBox[{"(", 
+             RowBox[{"1", "-", "tn"}], ")"}]}], ",", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"1", "-", "p"}], ")"}], "*", "tn"}]}], "}"}]}], "}"}]}], 
+      ";", 
+      RowBox[{
+       RowBox[{"entropy", "[", "p_", "]"}], ":=", 
+       RowBox[{
+        RowBox[{"-", "p"}], "*", 
+        RowBox[{"Log", "[", 
+         RowBox[{"2", ",", "p"}], "]"}]}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"info", "[", "m_", "]"}], ":=", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"entropy", "[", 
+           RowBox[{"Total", "[", 
+            RowBox[{"m", "[", 
+             RowBox[{"[", "1", "]"}], "]"}], "]"}], "]"}], "+", 
+          RowBox[{"entropy", "[", 
+           RowBox[{"Total", "[", 
+            RowBox[{"m", "[", 
+             RowBox[{"[", "2", "]"}], "]"}], "]"}], "]"}]}], ")"}], "+", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"entropy", "[", 
+           RowBox[{"Total", "[", " ", 
+            RowBox[{"m", "[", 
+             RowBox[{"[", 
+              RowBox[{"All", ",", "1"}], "]"}], "]"}], "]"}], " ", "]"}], "+", 
+          RowBox[{"entropy", "[", " ", 
+           RowBox[{"Total", "[", 
+            RowBox[{"m", "[", 
+             RowBox[{"[", 
+              RowBox[{"All", ",", "2"}], "]"}], "]"}], "]"}], " ", "]"}]}], 
+         ")"}], "-", 
+        RowBox[{"Total", "[", 
+         RowBox[{"Flatten", "[", 
+          RowBox[{"Table", "[", 
+           RowBox[{
+            RowBox[{"entropy", "[", 
+             RowBox[{"m", "[", 
+              RowBox[{"[", 
+               RowBox[{"i", ",", "j"}], "]"}], "]"}], "]"}], ",", 
+            "\[IndentingNewLine]", 
+            RowBox[{"{", 
+             RowBox[{"i", ",", "1", ",", "2"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"j", ",", "1", ",", "2"}], "}"}]}], "]"}], "]"}], 
+         "]"}]}]}], ";"}], ")"}]}]}], "]"}]], "Input", \
+"PluginEmbeddedContent"],
 
 Cell[BoxData[
  TagBox[
@@ -777,11 +1034,11 @@ Cell[BoxData[
        Hold[$CellContext`tpn$$], 0.5, "True Positive Rate"}, 0, 1}}, 
     Typeset`size$$ = {576., {218.134033203125, 223.865966796875}}, 
     Typeset`update$$ = 0, Typeset`initDone$$, Typeset`skipInitDone$$ = 
-    True, $CellContext`tpn$97674$$ = 0}, 
+    False, $CellContext`tpn$99167$$ = 0}, 
     DynamicBox[Manipulate`ManipulateBoxes[
      1, StandardForm, "Variables" :> {$CellContext`tpn$$ = 0.5}, 
       "ControllerVariables" :> {
-        Hold[$CellContext`tpn$$, $CellContext`tpn$97674$$, 0]}, 
+        Hold[$CellContext`tpn$$, $CellContext`tpn$99167$$, 0]}, 
       "OtherVariables" :> {
        Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
         Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
@@ -816,6 +1073,30 @@ $CellContext`tpn$$, $CellContext`p ->
      SingleEvaluation->True],
     Deinitialization:>None,
     DynamicModuleValues:>{},
+    Initialization:>(($CellContext`mut = {{$CellContext`p $CellContext`tp, \
+$CellContext`p (1 - $CellContext`tp)}, {(1 - $CellContext`p) (
+           1 - $CellContext`tn), (
+           1 - $CellContext`p) $CellContext`tn}}; $CellContext`entropy[
+         Pattern[$CellContext`p, 
+          Blank[]]] := (-$CellContext`p) 
+        Log[2, $CellContext`p]; $CellContext`info[
+         Pattern[$CellContext`m, 
+          Blank[]]] := ($CellContext`entropy[
+           Total[
+            Part[$CellContext`m, 1]]] + $CellContext`entropy[
+           Total[
+            Part[$CellContext`m, 2]]]) + ($CellContext`entropy[
+           Total[
+            Part[$CellContext`m, All, 1]]] + $CellContext`entropy[
+           Total[
+            Part[$CellContext`m, All, 2]]]) - Total[
+         Flatten[
+          Table[
+           $CellContext`entropy[
+            
+            Part[$CellContext`m, $CellContext`i, $CellContext`j]], \
+{$CellContext`i, 1, 2}, {$CellContext`j, 1, 2}]]]; Null); 
+     Typeset`initDone$$ = True),
     SynchronousInitialization->True,
     UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
     UnsavedVariables:>{Typeset`initDone$$},
@@ -828,9 +1109,9 @@ $CellContext`tpn$$, $CellContext`p ->
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{800.1166666666667, 3441.8099999999995`},
+WindowSize->{800.1166666666667, 3747.8099999999995`},
 Visible->True,
-AuthoredSize->{800, 3442},
+AuthoredSize->{800, 3748},
 ScrollingOptions->{"HorizontalScrollRange"->Fit,
 "VerticalScrollRange"->Fit},
 ShowCellBracket->False,
@@ -880,23 +1161,23 @@ Cell[CellGroupData[{
 Cell[15356, 372, 323, 11, 29, "Subsection"],
 Cell[15682, 385, 541, 10, 130, "Text"],
 Cell[CellGroupData[{
-Cell[16248, 399, 2566, 69, 167, "Input"],
-Cell[18817, 470, 2810, 56, 561, "Output"]
+Cell[16248, 399, 4999, 138, 269, "Input"],
+Cell[21250, 539, 3825, 80, 561, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[21664, 531, 211, 6, 27, "Subsubsection"],
-Cell[21878, 539, 419, 10, 39, "Text"],
+Cell[25112, 624, 211, 6, 27, "Subsubsection"],
+Cell[25326, 632, 419, 10, 39, "Text"],
 Cell[CellGroupData[{
-Cell[22322, 553, 2457, 64, 167, "Input"],
-Cell[24782, 619, 2627, 56, 533, "Output"]
+Cell[25770, 646, 4869, 134, 269, "Input"],
+Cell[30642, 782, 3642, 80, 533, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[27458, 681, 211, 6, 23, "Subsubsection"],
-Cell[27672, 689, 420, 10, 39, "Text"],
+Cell[34333, 868, 211, 6, 23, "Subsubsection"],
+Cell[34547, 876, 420, 10, 39, "Text"],
 Cell[CellGroupData[{
-Cell[28117, 703, 2459, 64, 184, "Input"],
-Cell[30579, 769, 2598, 55, 533, "Output"]
+Cell[34992, 890, 4871, 134, 286, "Input"],
+Cell[39866, 1026, 3613, 79, 533, "Output"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]
@@ -907,4 +1188,4 @@ Cell[30579, 769, 2598, 55, 533, "Output"]
 
 (* End of internal cache information *)
 
-(* NotebookSignature 5wDz#ZbwIFrKtAK0ZFXqbcX5 *)
+(* NotebookSignature Hv05GUdxK5jZQDw9BJZxGv6k *)
