@@ -19,6 +19,4 @@ I like to ski, bike, and hike.
 
 Last year, I embarked on a very long trip (96 days) across Europe with my girlfriend. I'll post a link to that blog "soon."
 
-### Contact me
-
 [comment]: <> ([joshmweiner@the-googly-mails](mailto:joshmweiner@the-googly-mails))
