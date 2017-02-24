@@ -4,7 +4,7 @@ title:  "First Post on GitHub Blog"
 date:   2016-03-01 11:42:12 -0700
 categories: nothing
 ---
-Hello, world! Finally, I'm Web-2.0ing myself. Perhaps I can use this platform as some kind of self-promotion springboard without actually doing much work.
+Hello, world! Finally, I'm Web-2.0ing myself. I plan on posting some bits of programming and fun "mad data science" projects here.
 
 Testing things: a useful website is [Google][goog]. Here is some code:
 
